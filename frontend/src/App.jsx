@@ -1,7 +1,7 @@
 import Home from "./views/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import AllBooks from "./views/AllBooks";
@@ -19,6 +19,7 @@ import { AddBook } from "./views/AddBook";
 import { UpdateBook } from "./views/UpdateBook";
 import AdminAllContact from "./views/AdminAllContact";
 import AdminAllUserlist from "./views/AdminAllUserlist";
+import Summery from "./views/Summery";
 
 function App() {
   const dispatch = useDispatch();
@@ -47,10 +48,10 @@ function App() {
             <>
               <Route path="/profile/wishlist" element={<Wishlists />} />
               <Route path="/profile/order" element={<UserOrder />} />
-              
             </>
           ) : (
             <>
+              <Route index element={<Summery />} />
               <Route path="/profile/adminadd-book" element={<AddBook />} />
               <Route
                 path="/profile/admin-allorder"

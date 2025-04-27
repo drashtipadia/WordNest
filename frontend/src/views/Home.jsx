@@ -9,7 +9,7 @@ export default function Home() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const role = useSelector((state) => state.auth.role);
   return (
-    <div className="bg-zinc-900 text-white px-10 py-8">
+    <div className="bg-zinc-900 dark:text-white px-10 py-8">
       <Hero />
       <RecentlyAdded />
       <Aboutus />

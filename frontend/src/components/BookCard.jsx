@@ -2,8 +2,11 @@ import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 import { BASE_URL, IMG_URL } from "../utils/config";
+import { useSelector } from "react-redux";
 
 const BookCard = ({ data, wishlist, cart, height }) => {
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const role = useSelector((state) => state.auth.role);
   const headers = {
     id: localStorage.getItem("id"),
     authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -44,8 +47,14 @@ const BookCard = ({ data, wishlist, cart, height }) => {
           <p className="mt-2 text-zinc-100 font-semibold text-xl">
             ₹{data.price}
           </p>
+          {isLoggedIn === true && role === "admin" && (
+            <p className="text-red-500 mt-2 font-semibold">
+              {data.quantity == 0 && "Out Of Stock"}
+            </p>
+          )}
         </div>
       </Link>
+
       {wishlist && (
         <button
           className=" px-4 py-2 rounded border border-red-500 text-red-500 mt-4 hover:bg-red-600 hover:text-white"

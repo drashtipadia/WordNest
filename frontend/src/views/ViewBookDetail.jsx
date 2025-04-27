@@ -72,6 +72,9 @@ const ViewBookDetail = () => {
               <GrLanguage className="me-3" />
               {data.language}
             </p>
+            <p className="mt-4 text-zinc-100 text-xl font-semibold">
+              ISBN no. {data.ISBN}
+            </p>
             <p className="mt-4 text-zinc-100 text-3xl font-semibold">
               Price: ₹ {data.price}
             </p>

@@ -131,4 +131,16 @@ router.get("/get-book/:id", async (req, res) => {
   }
 });
 
+//get Total book
+router.get("/totalbooks", async (req, res) => {
+  try {
+    const books = await Book.find().countDocuments();
+    // console.log(userData);
+    return res.status(200).json({ data: books, status: "success" });
+  } catch (error) {
+    //console.log(error);
+    return res.status(500).json({ message: "An Error occured" });
+  }
+});
+
 export default router;

@@ -133,8 +133,22 @@ router.get("/get-userlist", authenticateToken, async (req, res) => {
         .status(400)
         .json({ message: "You are not having to access to perfome admin" });
     }
-    const users = await User.find().sort({ createdAt: -1 }).select("-password");
+    const users = await User.find({ role: "user" })
+      .sort({ createdAt: -1 })
+      .select("-password");
     return res.json({ status: "success", data: users });
+  } catch (error) {
+    //console.log(error);
+    return res.status(500).json({ message: "An Error occured" });
+  }
+});
+
+//get Total User
+router.get("/totalUser", async (req, res) => {
+  try {
+    const totaluser = await User.find({ role: "user" }).countDocuments();
+    // console.log(userData);
+    return res.status(200).json({ data: totaluser, status: "success" });
   } catch (error) {
     //console.log(error);
     return res.status(500).json({ message: "An Error occured" });

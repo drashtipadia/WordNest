@@ -76,8 +76,6 @@ router.put("/update-status/:id", authenticateToken, async (req, res) => {
   }
 });
 
-export default router;
-
 router.delete("/delete-order/:orderid", authenticateToken, async (req, res) => {
   try {
     const { id } = req.headers;
@@ -88,17 +86,19 @@ router.delete("/delete-order/:orderid", authenticateToken, async (req, res) => {
         .status(400)
         .json({ message: "You are not having to access to perfome admin" });
     }
-    await Order.findByIdAndDelete(orderid);
-    return res.status(200).json({ message: "Ordered deleted Successfully" });
   } catch (error) {
     //console.log(error);
     return res.status(500).json({ message: "An Error occured" });
   }
 });
 
-//delete contact
+router.get("/totalorder", async (req, res) => {
+  try {
+    const Totalorders = await Order.find().countDocuments();
+    return res.status(200).json({ data: Totalorders, status: "success" });
+  } catch (error) {
+    return res.status(500).json({ message: "An Error occured" });
+  }
+});
 
-// quantity: orderData.quantity,
-// address: orderData.address,
-// pincode: orderData.pincode,
-// state: orderData.state,
+export default router;

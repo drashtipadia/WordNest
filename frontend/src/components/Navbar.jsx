@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { HiOutlineBars3 } from "react-icons/hi2";
 
 import { useSelector } from "react-redux";
+import Themetoggle from "./Themetoggle";
 
 export default function Navbar() {
   const links = [
@@ -37,6 +38,7 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="nav-links-bookstore  flex items-center gap-4 ">
+          {/* <Themetoggle />{" "} */}
           <div className="hidden md:flex gap-4">
             {links.map((items, i) => (
               <div className="flex items-center justify-center" key={i}>
@@ -93,6 +95,7 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
+
       <div
         className={`${mobileNav} bg-zinc-800 h-screen absolute top-0 left-0 w-full z-40 flex flex-col items-center justify-center`}
       >

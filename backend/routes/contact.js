@@ -62,4 +62,16 @@ router.delete(
   }
 );
 
+//get Total contact
+router.get("/totalcontact", async (req, res) => {
+  try {
+    const contacts = await Contact.find().countDocuments();
+    // console.log(userData);
+    return res.status(200).json({ data: contacts, status: "success" });
+  } catch (error) {
+    //console.log(error);
+    return res.status(500).json({ message: "An Error occured" });
+  }
+});
+
 export default router;
