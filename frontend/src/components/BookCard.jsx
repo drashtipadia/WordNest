@@ -30,21 +30,25 @@ const BookCard = ({ data, wishlist, cart, height }) => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className={`bg-zinc-800 rounded p-4 flex flex-col ${height}`}>
+    <div
+      className={`bg-gray-200 dark:bg-zinc-800 rounded p-4 flex flex-col ${height}`}
+    >
       <Link to={`/book-details/${data._id}`}>
-        <div className="bg-zinc-800 rounded p-4 flex flex-col">
-          <div className="bg-zinc-900 rounded flex items-center justify-center">
+        <div className="dark:bg-zinc-800 rounded p-4 flex flex-col">
+          <div className="bg-gray-100 dark:bg-zinc-900 rounded flex items-center justify-center">
             <img
               src={`${IMG_URL}/${data.image}`}
               alt="/"
               className="h-[25vh]"
             />
           </div>
-          <h2 className="mt-4 text-xl text-white  font-semibold">
+          <h2 className="mt-4 text-xl dark:text-white  font-semibold">
             {data.title}
           </h2>
-          <p className="mt-2 text-zinc-100 font-semibold">by {data.author}</p>
-          <p className="mt-2 text-zinc-100 font-semibold text-xl">
+          <p className="mt-2 dark:text-zinc-100 font-semibold">
+            by {data.author}
+          </p>
+          <p className="mt-2 dark:text-zinc-100 font-semibold text-xl">
             ₹{data.price}
           </p>
           {isLoggedIn === true && role === "admin" && (

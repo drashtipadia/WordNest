@@ -54,8 +54,8 @@ const ViewBookDetail = () => {
   return (
     <>
       {data && (
-        <div className="px-8 md:px-12 py-8 bg-zinc-900 flex flex-col md:flex-row ">
-          <div className="p-4 w-full lg:w-3/6 bg-zinc-800 rounded h-[45vh] lg:h-[80vh] flex  items-center justify-center ">
+        <div className="px-8 md:px-12 py-8 dark:bg-zinc-900 flex flex-col md:flex-row ">
+          <div className="p-4 w-full lg:w-3/6 bg-gray-200 dark:bg-zinc-800 rounded h-[45vh] lg:h-[80vh] flex  items-center justify-center ">
             <img
               src={`${IMG_URL}/${data.image}`}
               alt="/"
@@ -63,19 +63,19 @@ const ViewBookDetail = () => {
             />
           </div>
           <div className="p-4 w-full lg:w-3/6">
-            <h1 className="text-4xl text-zinc-300 font-semibold">
+            <h1 className="text-4xl dark:text-zinc-300 font-semibold">
               {data.title}
             </h1>
-            <p className="text-zinc-400 mt-1"> by {data.author}</p>
-            <p className="text-zinc-500 mt-4 text-xl">{data.desc}</p>
-            <p className="flex mt-4 items-center justify-start text-zinc-400">
+            <p className="dark:text-zinc-400 mt-1"> by {data.author}</p>
+            <p className="dark:text-zinc-500 mt-4 text-xl">{data.desc}</p>
+            <p className="flex mt-4 items-center justify-start dark:text-zinc-400">
               <GrLanguage className="me-3" />
               {data.language}
             </p>
-            <p className="mt-4 text-zinc-100 text-xl font-semibold">
+            <p className="mt-4 dark:text-zinc-100 text-xl font-semibold">
               ISBN no. {data.ISBN}
             </p>
-            <p className="mt-4 text-zinc-100 text-3xl font-semibold">
+            <p className="mt-4 dark:text-zinc-100 text-3xl font-semibold">
               Price: ₹ {data.price}
             </p>
             {data.quantity === 0 && (
@@ -86,14 +86,14 @@ const ViewBookDetail = () => {
             {isLoggedIn === true && role === "user" && data.quantity > 0 && (
               <div className="flex flex-col lg:flex-row gap-4 mt-4">
                 <button
-                  className="bg-white lg:rounded-full text-2xl p-3 mt-0 flex items-center justify-center"
+                  className="darh:bg-white lg:rounded-full text-2xl p-3 mt-0 flex items-center justify-center"
                   onClick={handleWishlist}
                 >
                   <FaHeart /> <span className="ms-3"> Add Wishlist</span>
                 </button>
 
                 <button
-                  className="bg-white lg:rounded-full text-2xl p-3 mt-0 flex items-center justify-center"
+                  className="dark:bg-white lg:rounded-full text-2xl p-3 mt-0 flex items-center justify-center"
                   onClick={handleCart}
                 >
                   <FaCartShopping /> <span className="ms-3">Add to Cart</span>
@@ -102,13 +102,13 @@ const ViewBookDetail = () => {
             )}
             {isLoggedIn === true && role === "admin" && (
               <div className="mt-4 ">
-                <p className="text-zinc-100 text-3xl font-semibold">
+                <p className="dark:text-zinc-100 text-3xl font-semibold">
                   Quantity : {data.quantity}
                 </p>
                 <div className="flex flex-col lg:flex-row gap-4">
                   <Link
                     to={`/updatebook/${id}`}
-                    className=" text-white bg-zinc-700 hover:bg-white hover:text-black lg:rounded-full text-3xl p-3 mt-4 flex items-center justify-center"
+                    className=" dark:text-white dark:bg-zinc-700 hover:bg-white hover:text-black lg:rounded-full text-3xl p-3 mt-4 flex items-center justify-center"
                   >
                     <FaEdit />
                     <span className="ms-3">Update</span>

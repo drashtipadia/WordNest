@@ -28,17 +28,19 @@ export default function Navbar() {
   }
   return (
     <>
-      <nav className="relative flex z-50 bg-zinc-800 text-white px-8 py-2 items-center justify-between ">
+      <nav className="relative bg-gray-300 flex z-50 dark:bg-zinc-800 dark:text-white px-8 py-4 items-center justify-between ">
         <div>
           <Link
             to={"/"}
-            className="text-5xl font-[Dancing-Script] font-semibold"
+            className="text-5xl font-[Dancing-Script] font-semibold "
           >
             WordNest
           </Link>
         </div>
+        <div className="flex-auto justify-end items-end px-5 hidden md:flex p-2 ">
+          <Themetoggle />{" "}
+        </div>
         <div className="nav-links-bookstore  flex items-center gap-4 ">
-          {/* <Themetoggle />{" "} */}
           <div className="hidden md:flex gap-4">
             {links.map((items, i) => (
               <div className="flex items-center justify-center" key={i}>
@@ -46,7 +48,7 @@ export default function Navbar() {
                 items.title === "Admin Profile" ? (
                   <Link
                     to={items.links}
-                    className="px-4 py-1 border rounded border-blue-500 hover:bg-white hover:text-zinc-800 transition-all duration-300"
+                    className="px-4 py-1 border rounded border-blue-600 hover:bg-white hover:text-zinc-800 transition-all duration-300"
                     // key={i}
                   >
                     {items.title}

@@ -65,7 +65,7 @@ router.post("/sign-in", async (req, res) => {
       { name: existingUser.username },
       { role: existingUser.role },
     ];
-    const token = jwt.sign({ authClaims }, JWT_KEY, { expiresIn: "24h" });
+    const token = jwt.sign({ authClaims }, JWT_KEY);
     res.status(200).json({
       id: existingUser._id,
       role: existingUser.role,
