@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Button from "../components/Button";
+import { useState, useEffect } from "react";
+import { Button } from "../components";
 import axios from "axios";
 import { BASE_URL } from "../utils/config";
 
-export default function Summery() {
+export const Summery = () => {
   const [order, setOrder] = useState();
   const [user, setUser] = useState();
   const [book, setBook] = useState();
@@ -51,4 +51,4 @@ export default function Summery() {
       </div>
     </div>
   );
-}
+};

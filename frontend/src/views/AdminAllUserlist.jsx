@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Loading from "../components/Loading";
+import { useState, useEffect } from "react";
+import { Loading } from "../components";
 import axios from "axios";
 import { BASE_URL } from "../utils/config";
 
-export default function AdminAllUserlist() {
+export const AdminAllUserlist = () => {
   const [allUsers, setAllUsers] = useState();
   const headers = {
     id: localStorage.getItem("id"),
@@ -74,4 +74,4 @@ export default function AdminAllUserlist() {
       )}
     </>
   );
-}
+};

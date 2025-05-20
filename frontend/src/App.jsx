@@ -1,25 +1,27 @@
-import Home from "./views/Home";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import {
+  Home,
+  Login,
+  Signup,
+  AllBooks,
+  Cart,
+  Profile,
+  Wishlists,
+  ViewBookDetail,
+  UserOrder,
+  ProfileDetails,
+  AdminAllContact,
+  AdminAllOrders,
+  AddBook,
+  UpdateBook,
+  AdminAllUserlist,
+  Summery,
+} from "./views";
+
+import { Navbar, Footer } from "./components";
 import { Routes, Route } from "react-router-dom";
-import Login from "./views/Login";
-import Signup from "./views/Signup";
-import AllBooks from "./views/AllBooks";
-import Cart from "./views/Cart";
-import Profile from "./views/Profile";
-import Wishlists from "./views/Wishlists";
-import ViewBookDetail from "./views/ViewBookDetail";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { authActions } from "./store/auth";
-import UserOrder from "./views/UserOrder";
-import ProfileDetails from "./views/ProfileDetails";
-import { AdminAllOrders } from "./views/AdminAllOrders";
-import { AddBook } from "./views/AddBook";
-import { UpdateBook } from "./views/UpdateBook";
-import AdminAllContact from "./views/AdminAllContact";
-import AdminAllUserlist from "./views/AdminAllUserlist";
-import Summery from "./views/Summery";
 
 function App() {
   const dispatch = useDispatch();

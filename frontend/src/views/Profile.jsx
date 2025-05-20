@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Sidebar } from "../components/Sidebar";
+import { Sidebar, Loading, MobileProfile } from "../components";
 import { Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
 import axios from "axios";
-import Loading from "../components/Loading";
-import { MobileProfile } from "../components/MobileProfile";
 import { BASE_URL } from "../utils/config";
 
-export default function Profile() {
-  //const isLoggedIn = useSelector();
+export const Profile = () => {
   const [profile, setProfile] = useState();
   const headers = {
     id: localStorage.getItem("id"),
@@ -27,7 +23,7 @@ export default function Profile() {
     fetch();
   }, []);
   return (
-    <div className="bg-zinc-900  px-2 md:px-12 flex flex-col  md:flex-row py-8 gap-4 text-white h-full">
+    <div className="dark:bg-zinc-900  px-2 md:px-12 flex flex-col  md:flex-row py-8 gap-4 dark:text-white h-full">
       {!profile && (
         <div className="w-full h-[100%] flex items-center justify-center">
           <Loading />{" "}
@@ -46,4 +42,4 @@ export default function Profile() {
       )}
     </div>
   );
-}
+};

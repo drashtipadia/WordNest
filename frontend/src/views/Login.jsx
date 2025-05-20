@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { BASE_URL } from "../utils/config.js";
 
-export default function Login() {
+export const Login=()=> {
   const [user, setUser] = useState({ email: "", password: "" });
   const navigate = useNavigate();
   const dispatch = useDispatch();

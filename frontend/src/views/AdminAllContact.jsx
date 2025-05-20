@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import Loading from "../components/Loading";
+import { useState, useEffect } from "react";
+import { Loading } from "../components";
 import axios from "axios";
 import { BASE_URL } from "../utils/config";
 import { MdDelete } from "react-icons/md";
 
-export default function AdminAllContact() {
+export const AdminAllContact = () => {
   const [allContact, setAllContact] = useState();
   const headers = {
     id: localStorage.getItem("id"),
@@ -36,11 +36,11 @@ export default function AdminAllContact() {
       )}
 
       {allContact && allContact.length > 0 && (
-        <div className="h-screen p-0 md:p-4 text-zinc-100">
-          <h1 className="text-3xl md:text-5xl font-semibold text-zinc-500 mb-8">
+        <div className="h-screen p-0 md:p-4 dark:text-zinc-100">
+          <h1 className="text-3xl md:text-5xl font-semibold dark:text-zinc-500 mb-8">
             All Contact
           </h1>
-          <div className="mt-4 bg-zinc-800 w-full rounded font-bold py-2 px-4 flex gap-2">
+          <div className="mt-4 dark:bg-zinc-800 w-full rounded font-bold py-2 px-4 flex gap-2">
             <div className="w-[5%]">
               <h1 className="text-center">Sr.</h1>
             </div>
@@ -85,4 +85,4 @@ export default function AdminAllContact() {
       )}
     </>
   );
-}
+};

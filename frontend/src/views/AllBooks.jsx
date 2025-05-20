@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Loading from "../components/Loading";
-import BookCard from "../components/BookCard";
+import { Loading, BookCard } from "../components";
 import { BASE_URL } from "../utils/config";
 
-export default function AllBooks() {
+export const AllBooks = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -32,4 +31,4 @@ export default function AllBooks() {
       </div>
     </div>
   );
-}
+};

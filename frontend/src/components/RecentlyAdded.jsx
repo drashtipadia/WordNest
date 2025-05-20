@@ -1,7 +1,7 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import BookCard from "./BookCard";
-import Loading from "./Loading";
+import { useEffect, useState } from "react";
+import { BookCard } from "./BookCard";
+import { Loading } from "./Loading";
 import { BASE_URL } from "../utils/config";
 
 export const RecentlyAdded = () => {

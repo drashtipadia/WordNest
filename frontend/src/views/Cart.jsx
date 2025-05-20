@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Loading from "../components/Loading";
+import { useEffect, useState } from "react";
+import { Loading } from "../components";
 import { AiFillDelete } from "react-icons/ai";
 import axios from "axios";
 import { BASE_URL, IMG_URL } from "../utils/config";
 
-export default function Cart() {
+export const Cart = () => {
   const [cart, setCart] = useState();
   const [total, setTotal] = useState();
   const headers = {
@@ -136,4 +136,4 @@ export default function Cart() {
       )}
     </div>
   );
-}
+};

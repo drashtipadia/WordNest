@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import React from "react";
 import { FaMoon } from "react-icons/fa";
 import { BsSunFill } from "react-icons/bs";
 
-const Themetoggle = () => {
+export const Themetoggle = () => {
   const [theme, setTheme] = useState("light");
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -39,5 +38,3 @@ const Themetoggle = () => {
     </button>
   );
 };
-
-export default Themetoggle;

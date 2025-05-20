@@ -1,7 +1,6 @@
-import React from "react";
 import { RxCross1 } from "react-icons/rx";
 
-export default function SeeUserData({ userDiv, userDivData, setUserDiv }) {
+export const SeeUserData = ({ userDiv, userDivData, setUserDiv }) => {
   return (
     <>
       <div
@@ -44,4 +43,4 @@ export default function SeeUserData({ userDiv, userDivData, setUserDiv }) {
       </div>
     </>
   );
-}
+};

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Loading from "../components/Loading";
+import { useEffect, useState } from "react";
+import { Loading } from "../components";
 import axios from "axios";
 import { BASE_URL } from "../utils/config";
 
-export default function ProfileDetails() {
+export const ProfileDetails = () => {
   const headers = {
     id: localStorage.getItem("id"),
     authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -202,4 +202,4 @@ export default function ProfileDetails() {
       )}
     </>
   );
-}
+};

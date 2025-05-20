@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineBars3 } from "react-icons/hi2";
-
 import { useSelector } from "react-redux";
-import Themetoggle from "./Themetoggle";
+import { Themetoggle } from "./Themetoggle";
 
-export default function Navbar() {
+export const Navbar = () => {
   const links = [
     { title: "Home", links: "/" },
     { title: "All Books", links: "/all-books" },
@@ -136,4 +135,4 @@ export default function Navbar() {
       </div>
     </>
   );
-}
+};

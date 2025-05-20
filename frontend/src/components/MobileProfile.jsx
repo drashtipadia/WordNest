@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export const MobileProfile = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);

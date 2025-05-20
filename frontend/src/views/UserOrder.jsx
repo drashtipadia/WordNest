@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { BASE_URL } from "../utils/config";
-import Loading from "../components/Loading";
-export default function UserOrder() {
+import { Loading } from "../components";
+export const UserOrder = () => {
   const [orderHistory, setOrderHistory] = useState();
 
   const headers = {
@@ -101,4 +101,4 @@ export default function UserOrder() {
       )}
     </>
   );
-}
+};

@@ -1,10 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { RecentlyAdded } from "../components/RecentlyAdded";
-import Contactus from "../components/Contactus";
+import { RecentlyAdded, Contactus } from "../components";
 import { useSelector } from "react-redux";
 
-export default function Home() {
+export const Home = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const role = useSelector((state) => state.auth.role);
   return (
@@ -75,4 +73,4 @@ export default function Home() {
       {role !== "admin" && <Contactus />}
     </div>
   );
-}
+};

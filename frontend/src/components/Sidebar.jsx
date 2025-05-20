@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,19 +17,19 @@ export const Sidebar = ({ data }) => {
     history("/");
   };
   return (
-    <div className="bg-zinc-800 md:p-4 rounded flex flex-col h-auto items-center justify-between lg:h-[100%]">
+    <div className="bg-gray-200 dark:bg-zinc-800 md:p-4 rounded flex flex-col h-auto items-center justify-between lg:h-[100%]">
       <div className="flex flex-col items-center justify-center">
-        <p className="mt-3 text-xl text-zinc-100 font-semibold">
+        <p className="mt-3 text-xl dark:text-zinc-100 font-semibold">
           {data.username}
         </p>
-        <p className="mt-1 text-normal text-zinc-300">{data.email}</p>
+        <p className="mt-1 text-normal dark:text-zinc-300">{data.email}</p>
         <div className="w-full mt-4 h-[1px] bg-zinc-500 hidden lg:block"></div>{" "}
       </div>
       {isLoggedIn === true && role === "user" && (
         <div className="w-full flex-col items-center justify-center hidden md:flex">
           <Link
             to="/profile/wishlist"
-            className="text-zinc-100 font-semibold w-full py-2 text-center hover:bg-zinc-900 rounded transition-all duration-300"
+            className="dark:text-zinc-100 font-semibold w-full py-2 text-center hover:bg-zinc-900 rounded transition-all duration-300"
           >
             Wishlist
           </Link>
@@ -54,31 +53,31 @@ export const Sidebar = ({ data }) => {
         <div className="w-full flex-col items-center justify-center hidden md:flex">
           <Link
             to="/profile/adminadd-book"
-            className="text-zinc-100 font-semibold w-full py-2 text-center hover:bg-zinc-900 rounded transition-all duration-300"
+            className="dark:text-zinc-100 font-semibold w-full py-2 text-center hover:bg-zinc-900 hover:text-zinc-100 rounded transition-all duration-300"
           >
             Add Book
           </Link>
           <Link
             to="/profile/admin-allorder"
-            className="text-zinc-100 font-semibold w-full py-2 text-center hover:bg-zinc-900 rounded transition-all duration-300"
+            className="dark:text-zinc-100 font-semibold w-full py-2 text-center hover:bg-zinc-900 hover:text-zinc-100  rounded transition-all duration-300"
           >
             All Orders
           </Link>
           <Link
             to="/profile/admin-userlist"
-            className="text-zinc-100 font-semibold w-full py-2 text-center hover:bg-zinc-900 rounded transition-all duration-300"
+            className="dark:text-zinc-100 font-semibold w-full py-2 text-center hover:bg-zinc-900 hover:text-zinc-100  rounded transition-all duration-300"
           >
             All Users
           </Link>
           <Link
             to="/profile/admin-contact"
-            className="text-zinc-100 font-semibold w-full py-2 text-center hover:bg-zinc-900 rounded transition-all duration-300"
+            className="dark:text-zinc-100 font-semibold w-full py-2 text-center hover:bg-zinc-900 hover:text-zinc-100  rounded transition-all duration-300"
           >
             All Contacts
           </Link>
           <Link
             to="/profile/details"
-            className="text-zinc-100 font-semibold w-full py-2 text-center hover:bg-zinc-900 rounded transition-all duration-300"
+            className="dark:text-zinc-100 font-semibold w-full py-2 text-center hover:bg-zinc-900 hover:text-zinc-100  rounded transition-all duration-300"
           >
             {" "}
             Details
@@ -87,7 +86,7 @@ export const Sidebar = ({ data }) => {
       )}
 
       <button
-        className="bg-zinc-900 text-xl w-full mt-4 lg:mt-0 text-white font-semibold flex itmes-center justify-center py-2 rounded hover:bg-white hover:text-zinc-900"
+        className="dark:bg-zinc-900 bg-red-300 text-xl w-full mt-4 lg:mt-0 dark:text-white font-semibold flex itmes-center justify-center py-2 rounded hover:bg-white hover:text-zinc-900"
         onClick={handleLogout}
       >
         Logout <FaArrowRightFromBracket className="ms-4 mt-1" />

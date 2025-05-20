@@ -1,10 +1,9 @@
 import axios from "axios";
-import React from "react";
 import { Link } from "react-router-dom";
 import { BASE_URL, IMG_URL } from "../utils/config";
 import { useSelector } from "react-redux";
 
-const BookCard = ({ data, wishlist, cart, height }) => {
+export const BookCard = ({ data, wishlist, cart, height }) => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const role = useSelector((state) => state.auth.role);
   const headers = {
@@ -78,5 +77,3 @@ const BookCard = ({ data, wishlist, cart, height }) => {
     </div>
   );
 };
-
-export default BookCard;

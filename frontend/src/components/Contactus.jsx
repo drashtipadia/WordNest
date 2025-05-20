@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { useState } from "react";
+import  { useState } from "react";
 import { BASE_URL } from "../utils/config";
 
-export default function Contactus() {
+export const Contactus = () => {
   const [contact, setContact] = useState({ name: "", email: "", message: "" });
   const handleInput = (e) => {
     setContact({ ...contact, [e.target.name]: e.target.value });
@@ -21,7 +21,10 @@ export default function Contactus() {
     <div className=" dark:bg-zinc-900 flex py-2.5 items-center justify-center font-sans ">
       <div className="bg-gray-200 dark:bg-zinc-800 rounded-lg px-8 py-5 w-full md:w-3/6 lg:w-4/6">
         <p className="dark:text-yellow-100 text-4xl text-center">Conatct Us</p>
-        <form className=" mb-4 dark:text-zinc-50 pt-4 px-8" onSubmit={handleSubmit}>
+        <form
+          className=" mb-4 dark:text-zinc-50 pt-4 px-8"
+          onSubmit={handleSubmit}
+        >
           <div className="mb-4">
             <label className="mb-2 block text-sm font-bold " htmlFor="email">
               Full Name
@@ -82,4 +85,4 @@ export default function Contactus() {
       </div>
     </div>
   );
-}
+};

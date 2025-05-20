@@ -1,9 +1,9 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import BookCard from "../components/BookCard";
+import { useEffect, useState } from "react";
+import { BookCard } from "../components";
 import { BASE_URL } from "../utils/config";
 
-export default function Wishlists() {
+export const Wishlists = () => {
   const [wishlistbook, setWishlistbook] = useState();
   const headers = {
     id: localStorage.getItem("id"),
@@ -39,4 +39,4 @@ export default function Wishlists() {
       </div>
     </div>
   );
-}
+};

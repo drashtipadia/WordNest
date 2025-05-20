@@ -1,11 +1,11 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BASE_URL } from "../utils/config";
-import Loading from "../components/Loading";
+import { Loading } from "../components";
 import { FaCheck, FaUserLarge } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { IoOpenOutline } from "react-icons/io5";
-import SeeUserData from "./SeeUserData";
+import { SeeUserData } from "./SeeUserData";
 import { MdDelete } from "react-icons/md";
 
 export const AdminAllOrders = () => {

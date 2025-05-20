@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import Loading from "../components/Loading";
+import { Loading } from "../components";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { GrLanguage } from "react-icons/gr";
 import { FaHeart } from "react-icons/fa";
@@ -10,7 +10,7 @@ import { FaEdit } from "react-icons/fa";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { BASE_URL, IMG_URL } from "../utils/config";
 
-const ViewBookDetail = () => {
+export const ViewBookDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [data, setData] = useState();
@@ -134,5 +134,3 @@ const ViewBookDetail = () => {
     </>
   );
 };
-
-export default ViewBookDetail;
